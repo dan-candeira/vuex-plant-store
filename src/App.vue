@@ -1,15 +1,30 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div v-for="product in products" :key="product.id">
+    <img :src="product.imageUrl" alt="" />
+  </div>
 </template>
 
-<style>
+<script>
+import { mapActions, mapState } from 'vuex';
+import { GET_PRODUCTS } from './store/mutation-types';
+
+export default {
+  async created() {
+    await this.loadProducts();
+  },
+  methods: {
+    ...mapActions([GET_PRODUCTS]),
+    async loadProducts() {
+      await this.getProducts();
+    },
+  },
+  computed: {
+    ...mapState(['products']),
+  },
+};
+</script>
+
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,5 +32,9 @@ import HelloWorld from './components/HelloWorld.vue'
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+img {
+  max-width: 100%;
 }
 </style>
