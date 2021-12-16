@@ -1,7 +1,5 @@
 <template>
-  <div v-for="product in products" :key="product.id">
-    <img :src="product.imageUrl" alt="" />
-  </div>
+  <router-view />
 </template>
 
 <script>
