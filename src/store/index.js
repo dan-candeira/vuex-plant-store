@@ -1,10 +1,11 @@
 import { createStore } from 'vuex';
 import { dataService } from '../shared';
 import { GET_PRODUCTS } from './mutation-types';
+import { PRODUCTS } from './state-types';
 
 export default createStore({
   state: {
-    products: [],
+    [PRODUCTS]: [],
   },
   mutations: {
     [GET_PRODUCTS](state, products) {

@@ -7,6 +7,7 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 import { GET_PRODUCTS } from './store/mutation-types';
+import { PRODUCTS } from './store/state-types';
 
 export default {
   async created() {
@@ -19,7 +20,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(['products']),
+    ...mapState([PRODUCTS]),
   },
 };
 </script>
