@@ -1,7 +1,9 @@
 [
   {
     "id": 1,
-    "imageUrl": "images/anchor-lee-RLicxqg_ly8-unsplash.jpg"
-
+    "imageUrl": "images/anchor-lee-RLicxqg_ly8-unsplash.jpg",
+    "name": "",
+    "attribution":"Anchor Lee",
+    "stock":10
   }
 ]
